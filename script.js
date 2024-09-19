@@ -11,16 +11,16 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
   });
 });
 
-function signInUser(username, email) {
-  if (username && email) {
-      // Store username and email in local storage
-      localStorage.setItem("username", username);
-      localStorage.setItem("email", email);
+// function signInUser(username, email) {
+//   if (username && email) {
+//       // Store username and email in local storage
+//       localStorage.setItem("username", username);
+//       localStorage.setItem("email", email);
       
-      // Call the function to handle what happens after signing in
-      handleUserSignin();
-  }
-}
+//       // Call the function to handle what happens after signing in
+//       handleUserSignin();
+//   }
+// }
 
 
 // Hover effect on scroll down button
@@ -90,62 +90,4 @@ function showMessage(message, isSuccess = true) {
 }
 
 // Send OTP form handler
-otpForm.addEventListener('submit', async function (e) {
-    e.preventDefault();  // Prevent form submission
 
-    const email = document.getElementById('email').value;
-
-    try {
-        const response = await fetch('https://youthful-carlynn-sourabhyadav9012-3c30c5cf.koyeb.app/send-otp', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email: email }),
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            showMessage(data.message);
-            otpForm.style.display = 'none';  // Hide the OTP form
-            verifyForm.style.display = 'block';  // Show the OTP verification form
-        } else {
-            showMessage(data.error, false);
-        }
-    } catch (error) {
-        showMessage('An error occurred: ' + error.message, false);
-    }
-});
-
-// Verify OTP form handler
-verifyForm.addEventListener('submit', async function (e) {
-    e.preventDefault();  // Prevent form submission
-    const givenusername = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const otp = document.getElementById('otp').value;
-
-    try {
-        const response = await fetch('https://youthful-carlynn-sourabhyadav9012-3c30c5cf.koyeb.app/verify-otp', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email: email, otp: otp }),
-        });
-
-        const data = await response.json();
-        window.open("index.html")
-
-        if (response.ok) {
-            showMessage(data.message);
-            signInUser(givenusername,email);
-            window.location.href = "/usercourse.html";
-            
-        } else {
-            showMessage(data.error, false);
-        }
-    } catch (error) {
-        showMessage('An error occurred: ' + error.message, false);
-    }
-});
