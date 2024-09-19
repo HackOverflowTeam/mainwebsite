@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnVox - Your Learning Partner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://yadavsourabhgh.github.io/LEARNVOX.jpg" alt="LearnVox Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#login">Login</a></li> <!-- Added Login Link -->
+            </ul>
+        </nav>
+    </header>
+
+    <div id="content">
+        <section id="hero">
+            <h1>Welcome to LearnVox</h1>
+            <p>Your ultimate platform for mastering diverse skills!</p>
+            <a href="#courses" class="scroll-down">Explore Courses</a>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses">
+            <h2>Our Courses</h2>
+            <div class="course-grid">
+                <!-- Courses Cards -->
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>What Our Students Say</h2>
+            <!-- Testimonials Content -->
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login">
+            <h2>Login to Your Account</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 LearnVox. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
