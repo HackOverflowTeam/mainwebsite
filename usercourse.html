@@ -28,4 +28,30 @@
             </ul>
         </nav>
     </header>
-     
+
+
+     <footer>
+        <p>&copy; 2024 LearnVox. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    function handleUserSignin() {
+        // Retrieve the username from local storage
+        var username = localStorage.getItem("username");
+        
+        if (username && username.trim() !== "") {
+            // Hide the signup button
+            document.getElementById("signupbtn").style.display = "none";
+            
+            // Show the username and display the greeting
+            var usernameElement = document.getElementById("usernamebtn");
+            usernameElement.style.display = "block";
+            document.getElementById("username").textContent = "Hello, " + username;
+        }
+      }
+      
+      handleUserSignin()
+      </script>
+</body>
+</html>
