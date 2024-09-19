@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnVox - Your Learning Partner</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="sign_up.css"> -->
+    <link rel="icon" type="image/x-icon" href="https://yadavsourabhgh.github.io/LV-favicon-photoaidcom-cropped.png">
+    
 </head>
 <body>
+    
     <header>
         <div class="logo">
             <img src= "https://yadavsourabhgh.github.io/LEARNVOX.jpg" alt="LearnVox Logo">
@@ -18,15 +23,12 @@
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="/signup.html">Signup</a></li>
+                <li style="display: block;" id="signupbtn"><a href="/signup.html">Signup</a></li>
+                <li style="display: none;" id="usernamebtn"><p id="username"></p></li>
             </ul>
         </nav>
     </header>
-    <!-- <section id="certificates" class="certificates-section">
-        <h2>Certificates and Badges</h2>
-        <p>Click below to view the certificates and badges we provide:</p>
-        <a href="certificates.html" target="_blank" class="cert-btn">View Certificates & Badges</a>
-    </section> -->
+     
 
     <div id="content">
          
@@ -43,6 +45,7 @@
                 <div class="course-card">
                     <img src="https://snu.edu.in/site/assets/files/13168/website-hosting-concept-with-bright-light.1600x0.webp" alt="Computer Science">
                     <h3>Computer Science</h3>
+                    <a href=""></a>
                 </div>
                 <div class="course-card">
                     <img src="https://www.york.ac.uk/media/study/courses/undergraduate/computerscience/bsc-beng-computer-science-banner.jpg" alt="Electronics">
@@ -112,5 +115,23 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    function handleUserSignin() {
+        // Retrieve the username from local storage
+        var username = localStorage.getItem("username");
+        
+        if (username && username.trim() !== "") {
+            // Hide the signup button
+            document.getElementById("signupbtn").style.display = "none";
+            
+            // Show the username and display the greeting
+            var usernameElement = document.getElementById("usernamebtn");
+            usernameElement.style.display = "block";
+            document.getElementById("username").textContent = "Hello, " + username;
+        }
+      }
+      
+      handleUserSignin()
+      </script>
 </body>
 </html>
