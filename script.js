@@ -45,7 +45,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
   // Send the email using the /sendmail endpoint
   try {
-    const response = await fetch('https://youthful-carlynn-sourabhyadav9012-3c30c5cf.koyeb.app/sendmail', {
+    const response = await fetch('https://email-api-wz6l.onrender.com/sendmail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
