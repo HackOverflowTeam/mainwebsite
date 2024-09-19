@@ -71,7 +71,7 @@
     const email = document.getElementById('email').value;
 
     try {
-        const response = await fetch('https://youthful-carlynn-sourabhyadav9012-3c30c5cf.koyeb.app/send-otp', {
+        const response = await fetch('https://email-api-wz6l.onrender.com/send-otp', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ verifyForm.addEventListener('submit', async function (e) {
     const otp = document.getElementById('otp').value;
 
     try {
-        const response = await fetch('https://youthful-carlynn-sourabhyadav9012-3c30c5cf.koyeb.app/verify-otp', {
+        const response = await fetch('https://email-api-wz6l.onrender.com/verify-otp', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
